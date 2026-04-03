@@ -266,6 +266,38 @@ body {
 }
 
 /* ── Affiliations strip ── */
+/* ── Home AI callout ── */
+.ai-callout {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 40px 32px;
+  border-bottom: 1px solid var(--rule);
+}
+.ai-callout-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.ai-callout-label {
+  font-family: var(--ff-mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.ai-callout-text {
+  font-family: var(--ff-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-mid);
+}
+.ai-callout-text a {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
 .affiliations {
   max-width: var(--max);
   margin: 0 auto;
@@ -1160,6 +1192,13 @@ footer {
   </div>
 </div>
 
+<div class="ai-callout">
+  <div class="ai-callout-inner">
+    <span class="ai-callout-label">AI & Innovation</span>
+    <span class="ai-callout-text">Brad builds AI tools for investigative newsrooms — from data scrapers to fact-checking workflows. Shaped enterprise AI strategy at Advance Media. <a href="#work" onclick="switchPage('work')">See more &rarr;</a></span>
+  </div>
+</div>
+
 </div><!-- /page-home -->
 
 
@@ -1291,6 +1330,32 @@ footer {
 
   </div>
 </section>
+
+
+<!-- ── AI section ── -->
+<div class="ai-section reveal">
+  <div class="ai-inner">
+    <div class="ai-label">AI & Journalism</div>
+    <h2 class="ai-headline">AI as investigative infrastructure.</em></h2>
+    <p class="ai-body">
+      Brad brings <strong>hands-on AI experience</strong> to investigative newsrooms — building tools, instituting policies and training reporters to use artificial intelligence as a key component of investigative reporting. He is constantly building bespoke tools to scrape, import and analyze data; synthesize disparate record formats; identify and strengthen reporter skill sets; and improve editing and fact-checking workflows. As part of Advance Media's <strong>Copilot Center of Excellence</strong>, he helped shape enterprise AI strategy for one of the largest media companies in the country.
+    </p>
+    <div class="ai-tools">
+      <div class="ai-tools-label">Tools & platforms</div>
+      <div class="ai-tools-list">
+        <span>Claude</span>
+        <span>Claude API</span>
+        <span>ChatGPT</span>
+        <span>OpenAI API</span>
+        <span>Gemini</span>
+        <span>DALL·E</span>
+        <span>Midjourney</span>
+        <span>NotebookLM</span>
+        <span>Qwen</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ── Editor investigations ── -->
 <section class="section reveal" id="reporter-work">
@@ -1448,31 +1513,6 @@ footer {
 
 
 </section>
-
-<!-- ── AI section ── -->
-<div class="ai-section reveal">
-  <div class="ai-inner">
-    <div class="ai-label">AI & Journalism</div>
-    <h2 class="ai-headline">AI as investigative infrastructure.</em></h2>
-    <p class="ai-body">
-      Brad brings <strong>hands-on AI experience</strong> to investigative newsrooms — building tools, instituting policies and training reporters to use artificial intelligence as a key component of investigative reporting. He is constantly building bespoke tools to scrape, import and analyze data; synthesize disparate record formats; identify and strengthen reporter skill sets; and improve editing and fact-checking workflows. As part of Advance Media's <strong>Copilot Center of Excellence</strong>, he helped shape enterprise AI strategy for one of the largest media companies in the country.
-    </p>
-    <div class="ai-tools">
-      <div class="ai-tools-label">Tools & platforms</div>
-      <div class="ai-tools-list">
-        <span>Claude</span>
-        <span>Claude API</span>
-        <span>ChatGPT</span>
-        <span>OpenAI API</span>
-        <span>Gemini</span>
-        <span>DALL·E</span>
-        <span>Midjourney</span>
-        <span>NotebookLM</span>
-        <span>Qwen</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div><!-- /page-work -->
 
