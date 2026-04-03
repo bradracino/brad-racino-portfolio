@@ -1691,7 +1691,7 @@ footer {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(function() {
         document.querySelectorAll('.page.active .reveal').forEach(function(r) {
-          observer.observe(r);
+          r.classList.add('visible');
         });
       }, 100);
     };
