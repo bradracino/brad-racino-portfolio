@@ -743,6 +743,96 @@ body {
   color: #aaa;
 }
 
+/* ── CV page ── */
+.cv-download {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 12px 24px;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  margin-bottom: 32px;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+}
+.cv-download:hover {
+  background: transparent;
+  color: var(--ink);
+}
+.cv-contact {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin-bottom: 24px;
+}
+.cv-contact a { color: var(--ink-faint); }
+.cv-summary {
+  font-family: var(--ff-serif);
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+.cv-section-heading {
+  font-family: var(--ff-mono);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.cv-job { margin-bottom: 24px; }
+.cv-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-bottom: 6px;
+}
+.cv-job-title {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  font-weight: 700;
+}
+.cv-job-org { font-style: italic; }
+.cv-job-date {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+.cv-job ul {
+  margin-left: 20px;
+  margin-top: 4px;
+}
+.cv-job li {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+.cv-skills p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.cv-awards li {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+.cv-memberships, .cv-appearances {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 /* ── Full awards list ── */
 .awards-full {
   margin-top: 48px;
@@ -1018,6 +1108,7 @@ footer {
       <li><a href="#" data-page="home" class="active">Home</a></li>
       <li><a href="#" data-page="work">Work</a></li>
       <li><a href="#" data-page="awards">Awards</a></li>
+      <li><a href="#" data-page="cv">CV</a></li>
     </ul>
     <button class="hamburger" id="hamburger-btn" aria-label="Menu">
       <span class="hamburger-bar"></span>
@@ -1029,6 +1120,7 @@ footer {
     <a href="#" data-page="home">Home</a>
     <a href="#" data-page="work">Work</a>
     <a href="#" data-page="awards">Awards</a>
+    <a href="#" data-page="cv">CV</a>
   </div>
 </header>
 
@@ -1663,6 +1755,123 @@ footer {
 
 </div><!-- /page-awards -->
 
+<div class="page" id="page-cv">
+<section class="section reveal">
+  <div class="section-label">Curriculum Vitae</div>
+
+  <a class="cv-download" href="Brad_Racino_Resume.html" target="_blank">Download / Print</a>
+
+  <div class="cv-contact">
+    Hudson Valley, New York &middot;
+    <a href="mailto:bradracino@gmail.com">bradracino@gmail.com</a> &middot;
+    <a href="https://www.linkedin.com/in/bradracino/" target="_blank">LinkedIn</a> &middot;
+    <a href="https://bsky.app/profile/bradracino.bsky.social" target="_blank">Bluesky</a> &middot;
+    <a href="https://x.com/bradracino" target="_blank">X</a>
+  </div>
+
+  <p class="cv-summary">
+    Award-winning editor and investigative journalist with 15+ years of experience. Two IRE Medals, two Murrow Awards, an Emmy nomination and 100+ career awards. Work has driven resignations, congressional hearings and federal investigations.
+  </p>
+
+  <div class="cv-section-heading">Skills</div>
+  <div class="cv-skills">
+    <p><strong>AI &amp; Technology:</strong> Claude, ChatGPT, OpenAI API, Gemini, Microsoft Copilot, Google NotebookLM, DALL-E, Midjourney, Qwen, prompt and workflow design, editorial AI guardrails, AI-assisted editorial operations</p>
+    <p><strong>Editorial &amp; Leadership:</strong> Investigative editing, story development, newsroom management, team building and scaling, content strategy, editorial standards and ethics, legal review, fact-checking, partnership development, performance management</p>
+    <p><strong>Production &amp; Design:</strong> Adobe Premiere, Audition, Photoshop, Lightroom, Final Cut, WordPress, Airtable, photography, videography, audio production, multimedia storytelling</p>
+    <p><strong>Audience &amp; Analytics:</strong> Google Analytics (GA4), Parse.ly, Chartbeat, SEO optimization, A/B testing, newsletter development, audience growth strategy, subscription and subscriber retention</p>
+    <p><strong>Technical:</strong> Basic Python (data scraping, database development), basic SQL, HTML/CSS, UX planning, API integration, content management systems</p>
+  </div>
+
+  <div class="cv-section-heading">Experience</div>
+
+  <div class="cv-job">
+    <div class="cv-job-header">
+      <div><span class="cv-job-title">Editor-in-Chief</span> &middot; <span class="cv-job-org">Floodlight</span></div>
+      <span class="cv-job-date">2026 &ndash; Present</span>
+    </div>
+    <ul>
+      <li>Lead a nonprofit newsroom investigating the powerful interests stalling climate action</li>
+      <li>Refocused editorial strategy on high-stakes investigative projects, producing the organization's most-read investigation to date</li>
+      <li>Recruited key reporting talent and established a foundational AI policy framework</li>
+    </ul>
+  </div>
+
+  <div class="cv-job">
+    <div class="cv-job-header">
+      <div><span class="cv-job-title">Managing Editor</span> &middot; <span class="cv-job-org">New York Focus</span></div>
+      <span class="cv-job-date">2024 &ndash; 2025</span>
+    </div>
+    <ul>
+      <li>Led creative and operational reset that doubled unique visitors within three months</li>
+      <li>Helped grow newsroom from 8 to 15 staff; managed and coached reporters and an editor on long-running investigative series</li>
+      <li>Brokered partnerships, increased newsletter frequency, iterated content formatting for maximum engagement</li>
+    </ul>
+  </div>
+
+  <div class="cv-job">
+    <div class="cv-job-header">
+      <div><span class="cv-job-title">Editor &amp; Publisher</span> &middot; <span class="cv-job-org">NY Cannabis Insider (Advance Media / Syracuse.com)</span></div>
+      <span class="cv-job-date">2021 &ndash; 2024</span>
+    </div>
+    <ul>
+      <li>Zero-to-one launch: conceived editorial vision, built the brand and grew it to statewide category leadership</li>
+      <li>Grew newsletter from zero to 5,000 subscribers in 12 months; stories generated millions of pageviews</li>
+      <li>Published 600+ stories; organized 12+ statewide conferences averaging 150&ndash;225 attendees</li>
+      <li>Collaborated directly with advertising, sales and marketing on sponsor packages and branded deliverables</li>
+      <li>Pioneered audience engagement tools including Subtext for direct reader communication and community building</li>
+      <li>Prototyped AI-assisted editorial ops (SEO, analysis, draft diagnostics, fact-checking); served on Advance Media's Copilot Center of Excellence for company-wide AI standards</li>
+    </ul>
+  </div>
+
+  <div class="cv-job">
+    <div class="cv-job-header">
+      <div><span class="cv-job-title">Director, Editor &amp; Senior Reporter</span> &middot; <span class="cv-job-org">inewsource</span></div>
+      <span class="cv-job-date">2012 &ndash; 2021</span>
+    </div>
+    <ul>
+      <li>Helped scale the organization from 4 to 17 staff; co-led hiring, training and five-year strategic vision</li>
+      <li>Managed reporters, visual journalists, social media and freelancers; trained team in web, radio and TV production</li>
+      <li>Established content syndication partnerships with NPR/PBS affiliates and CBS; frequent on-air contributor</li>
+      <li>Created innovative newsroom tools including public database platforms and the nationally recognized Transparify transparency tool</li>
+      <li>Instituted rigorous fact-checking, editorial standards and transparency practices; earned 90+ awards during tenure</li>
+    </ul>
+  </div>
+
+  <div class="cv-section-heading">Select Awards</div>
+  <p style="margin-bottom: 8px;"><strong>100+ career awards</strong>, including:</p>
+  <ul class="cv-awards">
+    <li><strong>IRE Medal</strong> (x2) &mdash; Investigative Reporters &amp; Editors (2013, 2014); Finalist (2012)</li>
+    <li><strong>National Edward R. Murrow Award</strong> (x2) &mdash; Audio News Series and Video Hard News, RTDNA (2015)</li>
+    <li><strong>Regional Edward R. Murrow Award</strong> (x2) &mdash; Audio and Video, RTDNA (2015)</li>
+    <li><strong>National Emmy Award, Nomination</strong> &mdash; Outstanding Hard News, NATAS (2015)</li>
+    <li><strong>Meyer "Mike" Berger Award</strong> &mdash; Columbia Journalism School (2015)</li>
+    <li><strong>AHCJ Award, 1st Place</strong> &mdash; Consumer/Feature, Association of Health Care Journalists (2015)</li>
+    <li><strong>Golden Mike Award</strong> &mdash; Medical &amp; Science Reporting, RTNA of Southern California (2021)</li>
+    <li><strong>Sol Price Award for Responsible Journalism</strong> &mdash; Society of Professional Journalists (2014)</li>
+    <li><strong>SPJ First Amendment Award</strong> &mdash; Society of Professional Journalists (2018)</li>
+    <li><strong>Excellence in Journalism Award</strong> &mdash; San Diego Society of Professional Journalists (2020)</li>
+    <li><strong>Body of Work Award</strong> &mdash; San Diego Press Club (2019)</li>
+    <li><strong>Best in Show</strong> (x4) &mdash; San Diego Press Club (2014, 2015 x2, 2017)</li>
+    <li><strong>1st Place, Distinguished State Government Coverage</strong> &mdash; New York News Publishers Association (2024)</li>
+    <li>60+ additional 1st, 2nd and 3rd place awards from SPJ, San Diego Press Club, Best of the West and Missouri Press Foundation (2011&ndash;2020)</li>
+  </ul>
+
+  <div class="cv-section-heading">Memberships &amp; Board Service</div>
+  <p class="cv-memberships">
+    Investigative Reporters &amp; Editors (IRE) &middot;
+    Society of Professional Journalists (SPJ) &middot;
+    ACES: The Society for Editing &middot;
+    Institute for Nonprofit News (INN) &middot;
+    NY Coalition on Open Government (Board Member)
+  </p>
+
+  <div class="cv-section-heading">Media Appearances &amp; Republication</div>
+  <p class="cv-appearances">
+    Work has appeared in or been cited by PBS NewsHour, The Washington Post, The Guardian, Der Spiegel, The Atlantic, The New Yorker, NBC News, MSNBC, Buzzfeed, Columbia Journalism Review, Center for Public Integrity, Marketplace, KQED, KPBS, CBS8, Law360, San Diego Union-Tribune, and 20+ more outlets.
+  </p>
+
+</section>
+</div><!-- /page-cv -->
 
 <!-- Footer -->
 <footer id="contact">
