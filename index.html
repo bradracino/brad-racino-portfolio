@@ -1688,6 +1688,7 @@ footer {
       document.querySelectorAll('.masthead-nav a').forEach(function(a) {
         a.classList.toggle('active', a.dataset.page === name);
       });
+      window.location.hash = name;
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(function() {
         document.querySelectorAll('.page.active .reveal').forEach(function(r) {
@@ -1695,6 +1696,12 @@ footer {
         });
       }, 100);
     };
+
+    // Load correct page from URL hash on page load
+    var initialPage = window.location.hash.replace('#', '') || 'home';
+    if (document.getElementById('page-' + initialPage)) {
+      switchPage(initialPage);
+    }
 
     // Name link goes home
     document.getElementById('masthead-home').addEventListener('click', function(e) {
