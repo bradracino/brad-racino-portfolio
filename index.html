@@ -1191,7 +1191,7 @@ footer {
 <div class="ai-callout">
   <div class="ai-callout-inner">
     <span class="ai-callout-label">AI & Innovation</span>
-    <span class="ai-callout-text">Brad builds AI tools for investigative newsrooms — from data scrapers to fact-checking workflows. <a href="#work" onclick="switchPage('work')">See more &rarr;</a></span>
+    <span class="ai-callout-text">Brad builds AI tools for investigative newsrooms — from data scrapers to fact-checking workflows. <a href="#work" onclick="event.preventDefault(); switchPage('work'); setTimeout(function(){ document.getElementById('ai-journalism').scrollIntoView({behavior:'smooth', block:'start'}); }, 200); return false;">See more &rarr;</a></span>
   </div>
 </div>
 
@@ -1341,7 +1341,7 @@ footer {
 
 
 <!-- ── AI section ── -->
-<div class="ai-section reveal">
+<div class="ai-section reveal" id="ai-journalism">
   <div class="ai-inner">
     <div class="ai-label">AI & Journalism</div>
     <h2 class="ai-headline">AI as investigative infrastructure.</em></h2>
