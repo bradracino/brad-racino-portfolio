@@ -144,8 +144,7 @@ body {
 .hero {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 72px 32px 56px;
-  border-bottom: 1px solid var(--rule);
+  padding: 72px 32px 24px;
 }
 .hero-kicker {
   font-family: var(--ff-mono);
@@ -269,33 +268,42 @@ body {
 /* ── Home AI callout ── */
 .ai-callout {
   max-width: var(--max);
-  margin: 0 auto;
-  padding: 40px 32px;
-  border-bottom: 1px solid var(--rule);
+  margin: 16px auto 32px;
+  padding: 0 32px;
 }
 .ai-callout-inner {
   display: flex;
-  align-items: baseline;
-  gap: 16px;
+  align-items: center;
+  gap: 24px;
   flex-wrap: wrap;
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-left: 4px solid var(--accent);
+  padding: 24px 28px;
+  box-shadow: 4px 4px 0 var(--ink);
 }
 .ai-callout-label {
   font-family: var(--ff-mono);
-  font-size: 14px;
-  letter-spacing: 0.1em;
+  font-size: 13px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
   white-space: nowrap;
+  font-weight: 700;
 }
 .ai-callout-text {
   font-family: var(--ff-serif);
   font-size: 17px;
   line-height: 1.6;
-  color: var(--ink-mid);
+  color: var(--ink);
+  flex: 1;
+  min-width: 260px;
 }
 .ai-callout-text a {
-  color: var(--ink);
+  color: var(--accent);
   text-decoration: underline;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .affiliations {
@@ -1180,6 +1188,13 @@ footer {
   </div>
 </section>
 
+<div class="ai-callout">
+  <div class="ai-callout-inner">
+    <span class="ai-callout-label">AI & Innovation</span>
+    <span class="ai-callout-text">Brad builds AI tools for investigative newsrooms — from data scrapers to fact-checking workflows. <a href="#work" onclick="switchPage('work')">See more &rarr;</a></span>
+  </div>
+</div>
+
 <div class="affiliations">
   <div class="affiliations-label">Affiliations</div>
   <div class="affiliations-list">
@@ -1189,13 +1204,6 @@ footer {
     <span>INN</span> |
     <span>NYCOG Board</span> |
     <span>Copilot Center of Excellence</span>
-  </div>
-</div>
-
-<div class="ai-callout">
-  <div class="ai-callout-inner">
-    <span class="ai-callout-label">AI & Innovation</span>
-    <span class="ai-callout-text">Brad builds AI tools for investigative newsrooms — from data scrapers to fact-checking workflows. <a href="#work" onclick="switchPage('work')">See more &rarr;</a></span>
   </div>
 </div>
 
