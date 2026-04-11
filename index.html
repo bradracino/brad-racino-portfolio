@@ -42,7 +42,7 @@ body {
   color: var(--ink);
   font-family: var(--ff-body);
   font-size: 19px;
-  line-height: 1.7;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -138,7 +138,42 @@ body {
 
 /* ── Page switching ── */
 .page { display: none; }
-.page.active { display: block; }
+.page.active {
+  display: block;
+  animation: pageFadeIn 280ms ease-out both;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero staggered entrance — replays on each return to home */
+.page.active .hero-kicker,
+.page.active .hero-headline,
+.page.active .hero-photo-wrap,
+.page.active .hero-bio,
+.page.active .hero-contact {
+  animation: heroRise 620ms cubic-bezier(.2,.7,.2,1) both;
+}
+.page.active .hero-kicker    { animation-delay:  40ms; }
+.page.active .hero-headline  { animation-delay: 120ms; }
+.page.active .hero-photo-wrap{ animation-delay: 200ms; }
+.page.active .hero-bio       { animation-delay: 260ms; }
+.page.active .hero-contact   { animation-delay: 340ms; }
+
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page.active,
+  .page.active .hero-kicker,
+  .page.active .hero-headline,
+  .page.active .hero-photo-wrap,
+  .page.active .hero-bio,
+  .page.active .hero-contact { animation: none; }
+}
 
 /* ── Hero ── */
 .hero {
@@ -179,7 +214,7 @@ body {
 }
 .hero-bio {
   font-size: 20px;
-  line-height: 1.7;
+  line-height: 1.55;
   color: var(--ink-mid);
   font-weight: 400;
   max-width: 600px;
@@ -679,7 +714,7 @@ body {
 }
 .ai-body {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.58;
   color: #a09e98;
   font-weight: 400;
   max-width: 680px;
@@ -1360,6 +1395,7 @@ footer {
         <span>Midjourney</span>
         <span>NotebookLM</span>
         <span>Qwen</span>
+        <span>ElevenLabs</span>
       </div>
     </div>
   </div>
@@ -1823,7 +1859,7 @@ footer {
 
   <div class="cv-section-heading">Skills</div>
   <div class="cv-skills">
-    <p><strong>AI &amp; Technology:</strong> Claude, ChatGPT, OpenAI API, Gemini, Microsoft Copilot, Google NotebookLM, DALL-E, Midjourney, Qwen, prompt and workflow design, editorial AI guardrails, AI-assisted editorial operations</p>
+    <p><strong>AI &amp; Technology:</strong> Claude, ChatGPT, OpenAI API, Gemini, Microsoft Copilot, Google NotebookLM, DALL-E, Midjourney, Qwen, ElevenLabs, prompt and workflow design, editorial AI guardrails, AI-assisted editorial operations</p>
     <p><strong>Editorial &amp; Leadership:</strong> Investigative editing, story development, newsroom management, team building and scaling, content strategy, editorial standards and ethics, legal review, fact-checking, partnership development, performance management</p>
     <p><strong>Production &amp; Design:</strong> Adobe Premiere, Audition, Photoshop, Lightroom, Final Cut, WordPress, Airtable, photography, videography, audio production, multimedia storytelling</p>
     <p><strong>Audience &amp; Analytics:</strong> Google Analytics (GA4), Parse.ly, Chartbeat, SEO optimization, A/B testing, newsletter development, audience growth strategy, subscription and subscriber retention</p>
