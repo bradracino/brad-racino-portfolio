@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+
+# Personal files
+resumes/
+*.pdf
+
+# Images (allow only site assets)
+*.jpg
+*.jpeg
+*.png
+!apple-touch-icon.png
+!favicon-*.png
+!Brad-Racino.jpg
+
+# Non-production HTML
+jag_birthday_invite.html
+portfolio_cards_1.html
