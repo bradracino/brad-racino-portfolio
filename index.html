@@ -649,6 +649,50 @@ body {
   border: 1px solid var(--rule);
   padding: 6px 12px;
 }
+.newsroom-quote {
+  grid-column: span 2;
+  background: var(--paper);
+  padding: 44px 56px 40px 72px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.newsroom-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: 20px;
+  left: 36px;
+  font-family: var(--ff-serif);
+  font-size: 84px;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.28;
+}
+.newsroom-quote-text {
+  font-family: var(--ff-serif);
+  font-size: 19px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--ink-mid);
+  margin: 0 0 20px;
+  position: relative;
+  z-index: 1;
+}
+.newsroom-quote-emphasis {
+  color: var(--ink);
+  font-weight: 600;
+}
+.newsroom-quote-attr {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+}
 
 /* ── Transparify callout ── */
 .callout {
@@ -1069,6 +1113,7 @@ footer {
 @media (max-width: 900px) {
   .inv-cards { grid-template-columns: 1fr; }
   .newsroom-grid { grid-template-columns: 1fr 1fr; }
+  .newsroom-quote { display: none; }
   .ai-grid { grid-template-columns: 1fr; }
 }
 
@@ -1621,6 +1666,11 @@ footer {
       <div class="newsroom-card-title">Senior Reporter & Assistant Editor</div>
       <div class="newsroom-card-role">2012 — 2021</div>
       <div class="newsroom-card-desc">Joined as an intern when the newsroom was four people and helped build it into a 17-person investigative operation. Wore every hat — reporter, photographer, videographer, web developer, assistant director, editor and partnership director. Built <a href="https://www.lenfestinstitute.org/solutions-resources/how-this-investigative-news-site-shows-its-work-to-build-trust-with-readers/" target="_blank" style="color:var(--accent)"><strong>Transparify</strong></a>, a transparency tool that showed readers exactly how investigations were reported.</div>
+    </div>
+    <figure class="newsroom-quote">
+      <blockquote class="newsroom-quote-text">While some reporters have abandoned the type of beat reporting that produces investigations about important public policy issues, <em>inewsource</em> continued to press forward with a dogged probe of San Diego's North County Transit system … to reveal layer upon layer of bureaucratic arrogance, corruption and ineptitude at the transit system. <em>inewsource</em> did not shrink under a fusillade of legal fire. The result has been a series of accountability measures involving the system, enough to show that <span class="newsroom-quote-emphasis">Brad Racino and company are making an impact</span>.</blockquote>
+      <figcaption class="newsroom-quote-attr">Investigative Reporters &amp; Editors &middot; 2014 IRE Medal</figcaption>
+    </figure>
   </div>
 
 
