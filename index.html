@@ -2587,7 +2587,7 @@ details.awards-year-group[open] .awards-year-list { animation: awardsOpen 0.3s e
 @keyframes awardsOpen { from { opacity: 0; transform: translateY(-6px); } }
 
 /* ══════════ Bottom tab bar + mobile header (phones) ══════════ */
-.tabbar, .masthead-cta, .swipe-hint { display: none; }
+.tabbar, .swipe-hint { display: none; }
 
 @media (max-width: 720px) {
   html { -webkit-text-size-adjust: 100%; }
@@ -2600,23 +2600,8 @@ details.awards-year-group[open] .awards-year-list { animation: awardsOpen 0.3s e
   .masthead { padding: 12px 0 10px; border-bottom: 1px solid rgba(17,17,9,0.12); background: rgba(247,244,238,0.94); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
   .masthead-inner { padding: 0 16px; }
   .masthead-name { font-size: 19px; }
-  .hamburger, .mobile-nav, #mobile-nav { display: none !important; }
-  .masthead-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    min-height: 40px;
-    padding: 0 16px;
-    border-radius: 999px;
-    background: var(--ink);
-    color: var(--paper);
-    font-family: var(--ff-mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .masthead-cta svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .hamburger { border-radius: 10px; }
+  .mobile-nav a { padding: 16px 16px; }
 
   .tabbar {
     display: grid;
@@ -2814,7 +2799,6 @@ details.awards-year-group[open] .awards-year-list { animation: awardsOpen 0.3s e
       <li><a href="#" data-page="awards">Awards</a></li>
       <li><a href="#" data-page="cv">CV</a></li>
     </ul>
-    <a class="masthead-cta" href="mailto:bradracino@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a>
     <button class="hamburger" id="hamburger-btn" aria-label="Menu">
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
