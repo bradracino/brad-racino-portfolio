@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f7f4ee">
 <title>Brad Racino — Investigative Editor & Journalist</title>
 <meta name="description" content="Brad Racino is an award-winning investigative journalist and Editor-in-Chief of Floodlight. Two IRE Medals, two Murrow Awards, national Emmy nomination. 100+ career awards.">
 <meta property="og:title" content="Brad Racino — Investigative Editor & Journalist">
@@ -2498,6 +2499,290 @@ footer {
   .footer-link { font-size: 15px; margin-bottom: 10px; }
   .footer-bottom { font-size: 14px; padding: 0 20px; }
 }
+
+/* ══════════ Awards: year accordions (all sizes) ══════════ */
+.awards-full-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 48px 0 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.awards-full-title {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.awards-expand {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 8px 0;
+}
+.awards-full { margin-top: 0; }
+details.awards-year-group { margin-bottom: 0; border-bottom: 1px solid var(--rule); }
+details.awards-year-group > summary.awards-year-heading {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  border-bottom: none;
+  margin: 0;
+  padding: 18px 2px;
+  min-height: 56px;
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+details.awards-year-group > summary::-webkit-details-marker { display: none; }
+.awards-year-note {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.awards-year-count {
+  margin-left: auto;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+details.awards-year-group > summary::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.25s;
+  flex: 0 0 auto;
+}
+details.awards-year-group[open] > summary::after { transform: rotate(225deg) translate(-2px, -2px); }
+details.awards-year-group > summary:hover { color: var(--accent); }
+details.awards-year-group .awards-year-list { padding: 0 2px 18px; }
+details.awards-year-group[open] .awards-year-list { animation: awardsOpen 0.3s ease; }
+@keyframes awardsOpen { from { opacity: 0; transform: translateY(-6px); } }
+
+/* ══════════ Bottom tab bar + mobile header (phones) ══════════ */
+.tabbar, .masthead-cta, .swipe-hint { display: none; }
+
+@media (max-width: 720px) {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: calc(68px + env(safe-area-inset-bottom));
+  }
+
+  /* Slim header: name + contact; nav moves to the thumb zone */
+  .masthead { padding: 12px 0 10px; border-bottom: 1px solid rgba(17,17,9,0.12); background: rgba(247,244,238,0.94); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+  .masthead-inner { padding: 0 16px; }
+  .masthead-name { font-size: 19px; }
+  .hamburger, .mobile-nav, #mobile-nav { display: none !important; }
+  .masthead-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .masthead-cta svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+  .tabbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    background: rgba(247,244,238,0.86);
+    -webkit-backdrop-filter: saturate(1.6) blur(18px);
+            backdrop-filter: saturate(1.6) blur(18px);
+    border-top: 1px solid rgba(17,17,9,0.12);
+    box-shadow: 0 -8px 30px rgba(0,0,0,0.06);
+  }
+  .tabbar a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 54px;
+    border-radius: 14px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    font-family: var(--ff-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .tabbar a:active { transform: scale(0.94); }
+  .tabbar svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .tabbar a.active { color: var(--ink); background: rgba(17,17,9,0.06); }
+  .tabbar a.active svg { stroke: var(--accent); stroke-width: 2.1; }
+
+  /* ── Home ── */
+  .hero { padding: 28px 16px 28px; }
+  .hero-kicker { font-size: 12px; margin-bottom: 14px; }
+  .hero-headline { font-size: calc((100vw - 32px) / 6.8); }
+  .hero-photo-wrap { margin: 22px -16px 24px; max-width: none; }
+  .hero-photo { border: none; max-width: none; }
+  .hero-bio { font-size: 17px; line-height: 1.6; margin-bottom: 14px; }
+  .hero-contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .hero-contact a {
+    min-height: 48px;
+    padding: 0 8px;
+    font-size: 13px;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--paper);
+  }
+  .hero-contact a:first-child {
+    grid-column: 1 / -1;
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    font-size: 14px;
+    min-height: 54px;
+  }
+  .ai-callout { padding: 0 16px; }
+  .affiliations { padding: 0 16px; }
+
+  /* ── Work ── */
+  .wk-open-inner { padding: 36px 16px 32px; }
+  .wk-open-title { font-size: calc((100vw - 32px) / 6.2); margin-bottom: 16px; }
+  .wk-open-kicker { font-size: 12px; margin-bottom: 14px; }
+  .wk-open-sub { font-size: 16px; }
+  .wk-nav { background: rgba(247,244,238,0.98); }
+  .wk-nav-inner { padding: 0 8px; }
+  .wk-sec { padding: 48px 16px 44px; }
+  .wk-title { font-size: 36px; margin-bottom: 16px; padding-top: 14px; }
+  .wk-lede { font-size: 16px; margin-bottom: 26px; }
+  .fl-carousel { margin-left: -16px; margin-right: -16px; width: auto; border-left: none; border-right: none; }
+  .fl-poster { height: min(calc(100vw * 16 / 9), 76vh); }
+
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: -6px 0 12px;
+  }
+  .swipe-hint::after { content: '\2192'; color: var(--accent); font-size: 14px; animation: swipeNudge 1.6s ease-in-out infinite; }
+  @keyframes swipeNudge { 50% { transform: translateX(5px); } }
+
+  .tl { margin-bottom: 22px; }
+  .nr-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    margin: 0 -16px;
+    padding: 6px 16px 18px;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .nr-grid::-webkit-scrollbar { display: none; }
+  .nr-card { flex: 0 0 84%; scroll-snap-align: start; padding: 22px 20px 20px; }
+  .nr-card:hover { transform: none; box-shadow: none; }
+  .nr-org { font-size: 26px; }
+  .nr-title { font-size: 15px; margin-bottom: 12px; }
+  .nr-desc { font-size: 15px; line-height: 1.58; }
+
+  .wk-quote-inner { padding: 64px 16px 52px; }
+  .wk-quote-mark { font-size: 170px; top: -16px; left: 6px; }
+  .wk-quote-text { font-size: 17px; line-height: 1.6; }
+  #page-work .ai-section { padding: 52px 16px; }
+
+  .case,
+  .case:nth-child(even) {
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-areas: "media" "body";
+    gap: 18px;
+    padding: 28px 0 32px;
+  }
+  .case-num {
+    position: absolute;
+    top: 40px;
+    left: 12px;
+    z-index: 2;
+    font-size: 54px;
+    color: rgba(255,255,255,0.12);
+    -webkit-text-stroke: 1.5px #fff;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+    pointer-events: none;
+  }
+  .case-media { aspect-ratio: 3 / 2; max-height: none; border-radius: 4px; }
+  .case-headline, .case--featured .case-headline { font-size: 24px; }
+  .case-meta { font-size: 11px; }
+  .case-dek { font-size: 16px; margin-bottom: 16px; }
+  .case-role { font-size: 15px; margin-bottom: 14px; }
+
+  #page-work .inv-archive { margin-top: 40px; }
+  #page-work .inv-archive-item a { padding: 18px 2px; min-height: 48px; }
+
+  /* ── Awards ── */
+  .awards-grid { grid-template-columns: 1fr 1fr; margin-bottom: 8px; }
+  .award-item { padding: 16px 14px; }
+  .award-name { font-size: 16px; }
+  .award-detail { font-size: 11px; letter-spacing: 0.03em; line-height: 1.45; }
+  .award-count { padding: 16px 14px; }
+  .award-count .stat-num { font-size: 34px; line-height: 1; }
+  .award-count .stat-label { font-size: 11px; margin-top: 4px; }
+  details.awards-year-group > summary.awards-year-heading { font-size: 20px; padding: 14px 2px; }
+  .awards-year-list li { padding: 10px 0; }
+  .award-li-name { font-size: 15px; }
+  .award-li-org { font-size: 12px; }
+
+  /* ── Shared ── */
+  .section { padding: 36px 16px; }
+  footer { padding: 40px 16px 32px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -2529,6 +2814,7 @@ footer {
       <li><a href="#" data-page="awards">Awards</a></li>
       <li><a href="#" data-page="cv">CV</a></li>
     </ul>
+    <a class="masthead-cta" href="mailto:bradracino@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a>
     <button class="hamburger" id="hamburger-btn" aria-label="Menu">
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
@@ -2542,6 +2828,13 @@ footer {
     <a href="#" data-page="cv">CV</a>
   </div>
 </header>
+
+<nav class="tabbar" aria-label="Primary">
+  <a href="#home" data-page="home" class="active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Home</span></a>
+  <a href="#work" data-page="work"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h8M8 16h5"/></svg><span>Work</span></a>
+  <a href="#awards" data-page="awards"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.2L7 21l5-2.6L17 21l-1.5-7.8"/></svg><span>Awards</span></a>
+  <a href="#cv" data-page="cv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>CV</span></a>
+</nav>
 
 <!-- ═══════════════════════════════════════ -->
 <!--  PAGE 1: HOME                           -->
@@ -2897,6 +3190,7 @@ footer {
     </div>
   </div>
 
+  <div class="swipe-hint" aria-hidden="true">Swipe through the newsrooms</div>
   <div class="nr-grid">
     <article class="nr-card nr-card--fl">
       <div class="nr-years">2026 &mdash; Present</div>
@@ -3119,40 +3413,44 @@ footer {
     </div>
   </div>
 
+  <div class="awards-full-bar">
+    <div class="awards-full-title">Every award, by year</div>
+    <button class="awards-expand" type="button" aria-expanded="false">Expand all</button>
+  </div>
   <div class="awards-full">
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2026 (as an editor)</div>
+    <details class="awards-year-group" open>
+      <summary class="awards-year-heading"><span>2026</span> <span class="awards-year-note">as an editor</span><span class="awards-year-count">1 award</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">1st Place: Science & Health Reporting</span><span class="award-li-org">Silurians Press Club Excellence in Journalism Awards</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2025 (as an editor)</div>
+    <details class="awards-year-group" open>
+      <summary class="awards-year-heading"><span>2025</span> <span class="awards-year-note">as an editor</span><span class="awards-year-count">3 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">Michelle K. Rea Award for Best Freedom of Information</span><span class="award-li-org">New York Press Association — Better Newspaper Contest</span></li>
         <li><span class="award-li-name">Investigative/In-Depth Reporting</span><span class="award-li-org">New York Press Association — Better Newspaper Contest</span></li>
         <li><span class="award-li-name">Local Government Story</span><span class="award-li-org">New York Press Association — Better Newspaper Contest</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2024</div>
+    <details class="awards-year-group" open>
+      <summary class="awards-year-heading"><span>2024</span><span class="awards-year-count">1 award</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">1st Place: Distinguished State Government Coverage</span><span class="award-li-org">New York News Publishers Association</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2021</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2021</span><span class="awards-year-count">1 award</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">Golden Mike Award — Medical & Science Reporting (Radio/Podcast)</span><span class="award-li-org">Radio & Television News Association of Southern California</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2020</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2020</span><span class="awards-year-count">10 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">1st Place — Health & Medicine (Online/Daily)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">1st Place — Series, Serious Subject (Online/Daily)</span><span class="award-li-org">San Diego Press Club</span></li>
@@ -3165,10 +3463,10 @@ footer {
         <li><span class="award-li-name">1st Place — Science/Technology Story</span><span class="award-li-org">San Diego Society of Professional Journalists</span></li>
         <li><span class="award-li-name">2nd Place — Investigative/Enterprise Story (Single Subject)</span><span class="award-li-org">San Diego Society of Professional Journalists</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2019</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2019</span><span class="awards-year-count">22 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">Body of Work Award</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">1st Place — Business & Financial</span><span class="award-li-org">San Diego Press Club</span></li>
@@ -3193,20 +3491,20 @@ footer {
         <li><span class="award-li-name">3rd Place — Environment Story</span><span class="award-li-org">Society of Professional Journalists</span></li>
         <li><span class="award-li-name">3rd Place — Video: Investigative/Enterprise</span><span class="award-li-org">Society of Professional Journalists</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2018</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2018</span><span class="awards-year-count">4 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">SPJ First Amendment Award</span><span class="award-li-org">Society of Professional Journalists</span></li>
         <li><span class="award-li-name">1st Place — Education (Online/Daily)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">1st Place — Investigative Reporting (Online/Daily)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">3rd Place — Project Reporting</span><span class="award-li-org">Best of the West</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2017</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2017</span><span class="awards-year-count">7 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">Best in Show — Online/Daily Newspapers</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">1st Place — Investigative Reporting (Online/Daily)</span><span class="award-li-org">San Diego Press Club</span></li>
@@ -3216,19 +3514,19 @@ footer {
         <li><span class="award-li-name">2nd Place — Investigative/Enterprise Story</span><span class="award-li-org">Society of Professional Journalists</span></li>
         <li><span class="award-li-name">3rd Place — Real Estate Story</span><span class="award-li-org">Society of Professional Journalists</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2016</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2016</span><span class="awards-year-count">3 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">1st Place — Investigative Reporting (Daily/Web)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">3rd Place — Investigative Reporting (Daily/Web)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">3rd Place — Enterprise/Investigative Reporting (Radio)</span><span class="award-li-org">San Diego Press Club</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2015</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2015</span><span class="awards-year-count">21 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">National Emmy Award — Nomination, Outstanding Hard News</span><span class="award-li-org">National Academy of Television Arts & Sciences</span></li>
         <li><span class="award-li-name">National Edward R. Murrow Award — Audio News Series</span><span class="award-li-org">Radio Television Digital News Association</span></li>
@@ -3252,10 +3550,10 @@ footer {
         <li><span class="award-li-name">1st Place — Investigative Reporting (Daily/Web)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">2nd Place — Investigative Reporting (Daily/Web)</span><span class="award-li-org">San Diego Press Club</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2014</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2014</span><span class="awards-year-count">9 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">2013 IRE Medal</span><span class="award-li-org">Investigative Reporters & Editors</span></li>
         <li><span class="award-li-name">Sol Price Award for Responsible Journalism</span><span class="award-li-org">Society of Professional Journalists</span></li>
@@ -3267,10 +3565,10 @@ footer {
         <li><span class="award-li-name">1st Place — Series (Integrated Media)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">2nd Place — Investigative Reporting (Integrated Media)</span><span class="award-li-org">San Diego Press Club</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2013</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2013</span><span class="awards-year-count">10 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">2012 IRE Medal — Finalist</span><span class="award-li-org">Investigative Reporters & Editors</span></li>
         <li><span class="award-li-name">1st Place — General News Reporting (Large Market)</span><span class="award-li-org">Society of Professional Journalists</span></li>
@@ -3283,10 +3581,10 @@ footer {
         <li><span class="award-li-name">1st Place — Business & Financial (Integrated Media)</span><span class="award-li-org">San Diego Press Club</span></li>
         <li><span class="award-li-name">1st, 2nd and 3rd Place — Investigative Reporting (Integrated Media)</span><span class="award-li-org">San Diego Press Club</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2012</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2012</span><span class="awards-year-count">7 awards</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">1st Place — Best Investigative Reporting</span><span class="award-li-org">Missouri Press Foundation</span></li>
         <li><span class="award-li-name">1st Place — Radio/Television Interview</span><span class="award-li-org">San Diego Press Club</span></li>
@@ -3296,14 +3594,14 @@ footer {
         <li><span class="award-li-name">Regional Winner — Online In-Depth Reporting</span><span class="award-li-org">Society of Professional Journalists</span></li>
         <li><span class="award-li-name">Runner-up — Feature Writing (National)</span><span class="award-li-org">Society of Professional Journalists</span></li>
       </ul>
-    </div>
+    </details>
 
-    <div class="awards-year-group">
-      <div class="awards-year-heading">2011</div>
+    <details class="awards-year-group">
+      <summary class="awards-year-heading"><span>2011</span><span class="awards-year-count">1 award</span></summary>
       <ul class="awards-year-list">
         <li><span class="award-li-name">2nd Place — Best Feature Story</span><span class="award-li-org">Missouri Press Foundation</span></li>
       </ul>
-    </div>
+    </details>
 
   </div>
 </section>
@@ -3313,10 +3611,10 @@ footer {
   <div class="section-label">Memberships & Board Service</div>
   <div class="memberships">
     <div class="memberships-list">
-      <span>Investigative Reporters & Editors (IRE)</span> |
-      <span>Society of Professional Journalists (SPJ)</span> |
-      <span>ACES: The Society for Editing</span> |
-      <span>Institute for Nonprofit News (INN)</span> |
+      <span>Investigative Reporters & Editors (IRE)</span>
+      <span>Society of Professional Journalists (SPJ)</span>
+      <span>ACES: The Society for Editing</span>
+      <span>Institute for Nonprofit News (INN)</span>
       <span>NY Coalition on Open Government (Board)</span>
     </div>
   </div>
@@ -3535,7 +3833,7 @@ footer {
       document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
       document.getElementById('page-' + name).classList.add('active');
       document.querySelectorAll('.page.active .fl-carousel').forEach(function(c) { if (c.flUpdate) c.flUpdate(); });
-      document.querySelectorAll('.masthead-nav a').forEach(function(a) {
+      document.querySelectorAll('.masthead-nav a, .tabbar a').forEach(function(a) {
         a.classList.toggle('active', a.dataset.page === name);
       });
       window.location.hash = name;
@@ -3564,6 +3862,25 @@ footer {
       a.addEventListener('click', function(e) {
         e.preventDefault();
         switchPage(a.dataset.page);
+      });
+    });
+
+    // Bottom tab bar (phones)
+    document.querySelectorAll('.tabbar a').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        switchPage(a.dataset.page);
+      });
+    });
+
+    // Awards: expand / collapse all years
+    document.querySelectorAll('.awards-expand').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var groups = document.querySelectorAll('details.awards-year-group');
+        var open = btn.getAttribute('aria-expanded') !== 'true';
+        groups.forEach(function(g) { g.open = open; });
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Collapse all' : 'Expand all';
       });
     });
 
