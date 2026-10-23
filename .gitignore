@@ -11,7 +11,7 @@ resumes/
 *.png
 !apple-touch-icon.png
 !favicon-*.png
-!Brad-Racino.jpg
+!og-image.png
 
 # Non-production HTML
 jag_birthday_invite.html
